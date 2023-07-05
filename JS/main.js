@@ -26,7 +26,17 @@ function updateCoffees(e) {
     });
     coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
 }
-
+function updateCoffees2(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let selectedRoast = roastSelection2.value;
+    let filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.roast === selectedRoast) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
+}
 function updateSearch(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let userInput = searchInput.value;
@@ -38,7 +48,17 @@ function updateSearch(e) {
     });
     coffeeDiv.innerHTML = renderCoffees(searchedCoffees);
 }
-
+function updateSearch2(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let userInput = searchInput2.value;
+    let searchedCoffees = [];
+    coffees.forEach(function(coffee) {
+        if(coffee.name.toLowerCase().includes(userInput.toLowerCase())){
+            searchedCoffees.push(coffee);
+        }
+    });
+    coffeeDiv.innerHTML = renderCoffees(searchedCoffees);
+}
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -60,12 +80,15 @@ let coffees = [
 let coffeeDiv = document.querySelector('#coffees');
 
 let roastSelection = document.querySelector('#roast-selection');
+let roastSelection2 = document.querySelector('#roast-selection2');
 let searchInput = document.querySelector('#search');
+let searchInput2 = document.querySelector('#search2');
 
 
 coffeeDiv.innerHTML = renderCoffees(coffees);
-
 roastSelection.addEventListener('change', updateCoffees);
+roastSelection2.addEventListener('change', updateCoffees2);
 searchInput.addEventListener('input', updateSearch);
+searchInput2.addEventListener('input', updateSearch2)
 
 // Autocomplete
