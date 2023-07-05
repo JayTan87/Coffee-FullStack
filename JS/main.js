@@ -32,10 +32,11 @@ function updateSearch(e) {
     let userInput = searchInput.value;
     let searchedCoffees = [];
     coffees.forEach(function(coffee) {
-
+    if(coffee.name.toLowerCase().includes(userInput.toLowerCase())){
+        searchedCoffees.push(coffee);
         }
     });
-    coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
+    coffeeDiv.innerHTML = renderCoffees(searchedCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -57,7 +58,7 @@ let coffees = [
 ];
 
 let coffeeDiv = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
+
 let roastSelection = document.querySelector('#roast-selection');
 let searchInput = document.querySelector('#search');
 
@@ -65,6 +66,6 @@ let searchInput = document.querySelector('#search');
 coffeeDiv.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener('change', updateCoffees);
-submitButton.addEventListener('onchange', updateCoffees);
+searchInput.addEventListener('input', updateSearch);
 
 // Autocomplete
