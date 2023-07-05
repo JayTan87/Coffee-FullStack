@@ -27,6 +27,17 @@ function updateCoffees(e) {
     coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
 }
 
+function updateSearch(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let userInput = searchInput.value;
+    let searchedCoffees = [];
+    coffees.forEach(function(coffee) {
+
+        }
+    });
+    coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -48,9 +59,12 @@ let coffees = [
 let coffeeDiv = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
+let searchInput = document.querySelector('#search');
+
 
 coffeeDiv.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees);
+submitButton.addEventListener('onchange', updateCoffees);
 
 // Autocomplete
