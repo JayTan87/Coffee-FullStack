@@ -60,13 +60,11 @@ function updateSearch(e) {
     coffeeDiv.innerHTML = renderCoffees(searchedCoffees);
 }
 function addCoffee(e) {
+    e.preventDefault();
     let userInput2 = searchInput2.value;
-    let userObject = {
-        id: coffees.length - 1,
-        name: userInput2,
-        roast: roastSelection2
-        }
-    coffees.push(userObject);
+    let userRoast = roastSelection2.value;
+    let newCoffee = {id:coffees.length+1, name:`${userInput2}`, roast:`${userRoast}`};
+    coffees.push(newCoffee);
     coffeeDiv.innerHTML = renderCoffees(coffees);
 }
 
@@ -94,12 +92,13 @@ let roastSelection = document.querySelector('#roast-selection');
 let roastSelection2 = document.querySelector('#roast-selection2');
 let searchInput = document.querySelector('#search');
 let searchInput2 = document.querySelector('#search2');
+let submit =document.querySelector('#submit2');
 
 
 coffeeDiv.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
 roastSelection2.addEventListener('change', updateCoffees2);
 searchInput.addEventListener('input', updateSearch);
-searchInput2.addEventListener('submit', addCoffee)
+submit.addEventListener('click', addCoffee)
 
 // Autocomplete
