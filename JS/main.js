@@ -62,14 +62,13 @@ function updateSearch(e) {
 function addCoffee(e) {
     let userInput2 = searchInput2.value;
     let userObject = {
+        id: coffees.length - 1,
         name: userInput2,
         roast: roastSelection2
-    };
+        }
     coffees.push(userObject);
-
-
-    // coffeeDiv.innerHTML = renderCoffees(searchedCoffees);
-};
+    coffeeDiv.innerHTML = renderCoffees(coffees);
+}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
