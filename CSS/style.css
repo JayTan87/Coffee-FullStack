@@ -10,9 +10,8 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
-.btn-cust {
-    background-color: #6ea8fe;
-}
 
-/*Autopopulate*/
+input.add {
+    background-color: #15864BFF;
+}
 
