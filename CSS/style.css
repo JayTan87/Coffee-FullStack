@@ -1,7 +1,11 @@
+body {
+    font-family: "Sacremento", cursive;
+}
 .page-wrapper {
     background-image: url("../IMG/coffeebackground.avif");
     min-height: 100vh;
     background-size: cover;
+    font-family: "Sacremento", cursive;
 }
 
 table {
@@ -21,4 +25,16 @@ input.add{
 #submit2:hover {
     background-color: #dfff00;
 }
-
+.shadow-text {
+    text-shadow: #75703c 5px 0 10px;
+}
+.larger-text {
+    font-size: 1.5rem;
+}
+.very-large-text {
+    font-size: 4rem;
+}
+.img-cust {
+    border-radius: 50%;
+    border: 2px solid #FFF;
+}

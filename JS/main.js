@@ -1,14 +1,20 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    // let html = '';
-    // html += '<h2>' + coffee.name + '</h2>';
-    // html += '<p>' + coffee.roast + '</p>';
-    // html += '<h2>' + coffee.name + '</h2>';
-    // html += '<p>' + coffee.roast + '</p>';
+    let roastImage = "";
+  if(coffee.roast==="light") {
+      roastImage = '../IMG/light-roast.jpeg'
+  }
+    if(coffee.roast==="medium") {
+        roastImage = '../IMG/medium-roasted.jpeg'
+    }
+    if(coffee.roast==="dark") {
+        roastImage = '../IMG/dark-roasted.jpeg'
+    }
     let html = `
         <div class="col-6">
             <h2>${coffee.name}</h2>
+            <img src=${roastImage} width="50px" height="50px" class="img-cust">
             <p>${coffee.roast}</p>
         </div>
     `;
@@ -30,7 +36,10 @@ function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (selectedRoast === "all") {
+            filteredCoffees = coffees;
+        }
+        else if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
