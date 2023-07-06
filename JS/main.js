@@ -1,6 +1,7 @@
 (function () {
 	"use strict"
 
+    // Creates inner html for div with images and coffee choices
 	function renderCoffee(coffee) {
 		let roastImage = "";
 		if (coffee.roast === "light") {
@@ -23,7 +24,8 @@
 	}
 
 
-	function renderCoffees(coffees) {
+	// Creates list of coffees
+    function renderCoffees(coffees) {
 		let html = '';
 		for (let i = 0; i < coffees.length; i++) {
 			html += renderCoffee(coffees[i]);
@@ -31,7 +33,7 @@
 		return html;
 	}
 
-
+    // Coffee search showing all coffees with all roast types
 	function updateCoffees(e) {
 		e.preventDefault(); // don't submit the form, we just want to update the data
 		let selectedRoast = roastSelection.value;
@@ -46,6 +48,7 @@
 		coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
 	}
 
+    // Coffee search
 	function updateCoffees2(e) {
 		e.preventDefault(); // don't submit the form, we just want to update the data
 		let selectedRoast = roastSelection2.value;
@@ -70,6 +73,7 @@
 		coffeeDiv.innerHTML = renderCoffees(searchedCoffees);
 	}
 
+    // Allows user to add coffee
 	function addCoffee(e) {
 		e.preventDefault();
 		let userInput2 = searchInput2.value;
