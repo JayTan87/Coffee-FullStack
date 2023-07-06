@@ -14,7 +14,7 @@ function renderCoffee(coffee) {
     let html = `
         <div class="col-6">
             <h2>${coffee.name}</h2>
-            <img src=${roastImage} width="50px" height="50px" class="img-cust">
+            <img src=${roastImage} width="50px" height="50px" class="img-custom">
             <p class="mt-2">${coffee.roast}</p>
         </div>
     `;
