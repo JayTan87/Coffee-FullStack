@@ -1,5 +1,7 @@
-"use strict"
 
+
+(function(){
+    "use strict"
 function renderCoffee(coffee) {
     let roastImage = "";
   if(coffee.roast==="light") {
@@ -111,3 +113,4 @@ searchInput.addEventListener('input', updateSearch);
 submit.addEventListener('click', addCoffee)
 
 
+})();
