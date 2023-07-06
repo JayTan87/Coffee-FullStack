@@ -15,7 +15,7 @@ function renderCoffee(coffee) {
         <div class="col-6">
             <h2>${coffee.name}</h2>
             <img src=${roastImage} width="50px" height="50px" class="img-cust">
-            <p>${coffee.roast}</p>
+            <p class="mt-2">${coffee.roast}</p>
         </div>
     `;
     return html;
@@ -110,4 +110,4 @@ roastSelection2.addEventListener('change', updateCoffees2);
 searchInput.addEventListener('input', updateSearch);
 submit.addEventListener('click', addCoffee)
 
-// Autocomplete
+
