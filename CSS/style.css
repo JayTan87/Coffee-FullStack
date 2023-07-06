@@ -1,6 +1,7 @@
 body {
     font-family: "Sacremento", cursive;
 }
+
 .page-wrapper {
     background-image: url("../IMG/coffeebackground.avif");
     min-height: 100vh;
@@ -19,24 +20,23 @@ td, th {
     padding: 5px 10px;
 }
 
-button.add{
-    background-color: #15864BFF;
-
-}
-
-#submit2:hover {
-    background-color: #dfff00;
-}
 .shadow-text {
     text-shadow: #75703c 5px 0 10px;
 }
+
 .larger-text {
     font-size: 1.5rem;
 }
+
 .very-large-text {
     font-size: 4rem;
 }
+
 .img-cust {
     border-radius: 50%;
     border: 2px solid #FFF;
+}
+
+.border-cust {
+    border-bottom: 2px solid #75703c;
 }
