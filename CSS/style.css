@@ -11,7 +11,6 @@ html {
     background-image: url("../IMG/coffeebackground.avif");
     min-height: 100vh;
     background-attachment: fixed;
-    /*background-size: initial;*/
     font-family: "Sacremento", cursive;
 }
 
